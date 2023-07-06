@@ -1,11 +1,12 @@
 const { Client,  GatewayIntentBits, Collection, Events, } = require('discord.js');
-const { token} = require('./config.json');
+const { token } = require('./config.json');
 const fs = require('node:fs');
 const path = require('node:path');
 
 
  const client = new Client({ intents: [  
    GatewayIntentBits.Guilds,
+   GatewayIntentBits.GuildMembers,
    GatewayIntentBits.GuildMessages,
    GatewayIntentBits.MessageContent,
 
@@ -79,28 +80,6 @@ client.on(Events.InteractionCreate, async interaction => {
 
 
 
-// const  getRandomJoke = () =>{
-//     const jokes = [
-//       "Why don't scientists trust atoms? Because they make up everything!",
-//       "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them!",
-//       "Why don't skeletons fight each other? They don't have the guts!",
-//       "I'm reading a book about anti-gravity. It's impossible to put down!",
-//       "Why don't eggs tell jokes? Because they might crack up!",
-//       "What's the best thing about Switzerland? I don't know, but their flag is a huge plus!",
-//       "Why did the scarecrow win an award? Because he was outstanding in his field!",
-//       "What do you call a snowman with a six-pack? An abdominal snowman!",
-//       "Why did the bicycle fall over? Because it was two-tired!"
-//     ];
-  
-//     // Get a random joke from the array
-//     const randomIndex = Math.floor(Math.random() * jokes.length);
-//     return jokes[randomIndex];
-//   }
-
-
-      
-  
-  
 
 
 client.login(token);
