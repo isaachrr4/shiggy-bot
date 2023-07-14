@@ -21,7 +21,6 @@ module.exports = {
                   }
                 );
                 const { data } = response.data;
-               // console.log('pokeData', data)
                 const randomCard = data[Math.floor(Math.random() * data.length)];
                 const imageUrl = randomCard.images.small;
                 
@@ -29,17 +28,12 @@ module.exports = {
                 return imageUrl;
               } catch (error) {
                 console.error('Error fetching Pokémon card:', error);
-              }
+              };
 
-
-
-
-         }
-       
-
+         };
+      
           await interaction.deferReply('Getting card!');
           const result = await getPokemonCard();
-          console.log('poke res starts here ',result)
           await interaction.followUp(result);
         }
 		
